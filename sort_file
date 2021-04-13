@@ -6,11 +6,11 @@ FOR %%a IN (*.zip, *.rar, *.tar, *.apk, *ipa, *.7z) DO (
 	MOVE /Y "%%a" "Compressed"
 )
 
-ECHO "Create/Move folder Programs"
+ECHO "Create/Move folder Portable"
 FOR %%a IN (*.exe, *.msi) DO (
-	IF NOT EXIST Programs MKDIR Programs
+	IF NOT EXIST "Portable" MKDIR "Portable"
 	echo "Move %%a"
-	MOVE /Y "%%a" "Programs"
+	MOVE /Y "%%a" "Portable"
 )
 
 ECHO "Create/Move folder Music"
