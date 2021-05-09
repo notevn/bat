@@ -1,0 +1,12 @@
+Install-package Microsoft.EntityFrameworkCore.Design
+Install-package Microsoft.EntityFrameworkCore.Tools
+Install-package Microsoft.NETCore.App
+Install-package Npgsql.EntityFrameworkCore.PostgreSQL
+Install-package Npgsql.EntityFrameworkCore.PostgreSQL.Design
+
+
+Generate model
+Scaffold-DbContext "User ID=;Password=;Host=;Port=;Database=;" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models
+
+update database
+Scaffold-DbContext "User ID=;Password=;Host=;Port=;Database=;" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -Force
