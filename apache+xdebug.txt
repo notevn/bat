@@ -1,0 +1,14 @@
+NameVirtualHost *:82
+Listen 82
+<VirtualHost *:82>
+	DocumentRoot "D:\source\budget_report\public"
+    ServerName budget.demo
+    ErrorLog "D:\Logs\budget.demo-error.log"
+    CustomLog "D:\Logs\budget.demo-access.log" common
+</VirtualHost>
+
+[xdebug]
+zend_extension="D:\xampp\php\php_xdebug-3.0.3-7.4-vc15-nts-x86_64.dll"
+xdebug.mode=debug
+xdebug.client_host=127.0.0.1
+xdebug.client_port=9003
