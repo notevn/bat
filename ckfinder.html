@@ -1,0 +1,38 @@
+
+<script type="text/javascript" src="<?=base_url();?>assets/backend/ckfinder/ckfinder.js"></script>
+
+
+<script type="text/javascript">
+
+  function BrowseServer()
+  {
+  // You can use the "CKFinder" class to render CKFinder in a page:
+  var finder = new CKFinder();
+  finder.basePath = '../';  // The path for the installation of CKFinder (default = "/ckfinder/").
+  finder.selectActionFunction = SetFileField;
+  finder.popup();
+
+}
+
+// This is a sample function which is called when a file is selected in CKFinder.
+function SetFileField( fileUrl )
+{
+  document.getElementById( 'keywords' ).value = fileUrl;
+  document.getElementById('img').src = fileUrl;
+}
+
+
+</script>
+
+
+
+            <tr style="display: none">
+              <td>Hình ?nh:</td>
+              <td>
+                <img align="middle" id="img" src="<?=$product['keywords']?>" name="img" width="150" height="80"> 
+                <input id="keywords" name="keywords" value="<?=$product['keywords']?>" type="text" size="30" />
+                <input type="button" value="Browse Server" onclick="BrowseServer();" />
+              </td>
+            </tr>
+
+    
