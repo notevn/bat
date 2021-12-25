@@ -1,14 +1,18 @@
-NameVirtualHost *:82
-Listen 82
-<VirtualHost *:82>
-	DocumentRoot "D:\source\budget_report\public"
-    ServerName budget.demo
-    ErrorLog "D:\Logs\budget.demo-error.log"
-    CustomLog "D:\Logs\budget.demo-access.log" common
+NameVirtualHost *:8585
+Listen 8585
+
+<VirtualHost *:8585>
+    DocumentRoot "D:\03.Source\budget\public"
+    <Directory "D:\03.Source\budget\public">
+        Options FollowSymLinks
+        AllowOverride All
+        DirectoryIndex index.php
+        Require all granted
+    </Directory>
 </VirtualHost>
 
 [xdebug]
-zend_extension="D:\xampp\php\php_xdebug-3.0.3-7.4-vc15-nts-x86_64.dll"
+zend_extension="D:\Xampp_Server\8\php\ext\php_xdebug.dll"
 xdebug.mode=debug
 xdebug.client_host=127.0.0.1
 xdebug.client_port=9003
