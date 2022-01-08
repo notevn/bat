@@ -1,9 +1,11 @@
 NameVirtualHost *:8585
 Listen 8585
 
-<VirtualHost *:8585>
-    DocumentRoot "D:\03.Source\budget\public"
-    <Directory "D:\03.Source\budget\public">
+<VirtualHost *:80>
+    DocumentRoot ""
+    ErrorLog "logs/yourdomain.com-error.log"
+    CustomLog "logs/yourdomain.com-access.log" common
+    <Directory "">
         Options FollowSymLinks
         AllowOverride All
         DirectoryIndex index.php
